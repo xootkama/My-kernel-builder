@@ -50,7 +50,7 @@ DEVICE="X00T"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=wizard_defconfig
+DEFCONFIG=electroperf_defconfig
 
 # Show manufacturer info
 MANUFACTURERINFO="ASUSTek Computer Inc."
@@ -67,7 +67,7 @@ BUILD_TYPE="Nightly"
 COMPILER=gcc
 
 # Kernel is LTO
-LTO=0
+LTO=1
 
 # Specify linker.
 # 'ld.lld'(default)
@@ -143,8 +143,8 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 	elif [ $COMPILER = "gcc" ]
 	then
 		msg "|| Cloning GCC  ||"
-		git clone --depth=1 https://github.com/najahiiii/aarch64-linux-gnu -b gcc8-201903-A $KERNEL_DIR/gcc64
-		git clone --depth=1 https://github.com/Thoreck-project/arm-linux-gnueabi-gcc9 -b master $KERNEL_DIR/gcc32
+		git clone https://github.com/mvaisakh/gcc-arm64.git gcc64 --depth=1
+		git clone https://github.com/mvaisakh/gcc-arm.git gcc32 --depth=1
 
 	elif [ $COMPILER = "clangxgcc" ]
 	then
