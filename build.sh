@@ -56,9 +56,9 @@ DEFCONFIG=wizard_defconfig
 MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
-NAMA=Wizard-Electro
-JENIS=OC
-VARIAN=Bot
+NAMA=Wizard
+JENIS=ICE
+VARIAN=HMP
 # Build Type
 BUILD_TYPE="Nightly"
 
