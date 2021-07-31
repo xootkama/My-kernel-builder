@@ -3,7 +3,7 @@ name: Signature Drone
 
 steps:
  - name: compile
-   image: fajar4561/saciku:latest
+   image: kuplemarkeple/wizard:latest
    environment:
      TG_CHAT_ID:
        from_secret: TG_CHAT_ID
@@ -15,7 +15,7 @@ steps:
        from_secret: AKHIR
    commands:
       - git config --global user.name "$AWAL"
-      - git config --global user.email "maulanafajar751@gmail.com"
-      - git clone --depth=1 https://$AWAL:$AKHIR@github.com/fajar4561/Kernel_Asus_SDM660 -b eas kernel && cd kernel
+      - git config --global user.email "kuplemarkeple@gmail.com"
+      - git clone --depth=1 https://$AWAL:$AKHIR@github.com/kuplemarkeple/wizard-kernel-X00T kernel && cd kernel
       - curl https://raw.githubusercontent.com/fajar4561/My-kernel-builder/main/build.sh > run.sh
       - bash run.sh
