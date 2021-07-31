@@ -46,25 +46,25 @@ KERNEL_DIR=$PWD
 MODEL="Asus Zenfone Max Pro M1"
 
 # The codename of the device
-DEVICE="X00TD"
+DEVICE="X00T"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=X00TD_defconfig
+DEFCONFIG=wizard_defconfig
 
 # Show manufacturer info
 MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
-NAMA=Signature
-JENIS=EAS-R2
+NAMA=Wizard-Electro
+JENIS=OC
 VARIAN=Bot
 # Build Type
 BUILD_TYPE="Nightly"
 
 # Specify compiler.
 # 'clang' or 'clangxgcc' or 'gcc'
-COMPILER=clang
+COMPILER=gcc
 
 # Kernel is LTO
 LTO=0
