@@ -57,7 +57,7 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
 NAMA=Wizard
-JENIS=ICE
+JENIS=Electro
 VARIAN=HMP
 # Build Type
 BUILD_TYPE="Nightly"
@@ -164,7 +164,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 		GCC32_DIR=$KERNEL_DIR/gcc32
 
 	msg "|| Cloning Anykernel ||"
-        git clone https://github.com/fajar4561/Anykernel.git -b master AnyKernel3
+        git clone https://github.com/kuplemarkeple/AnyKernel3
 
 	if [ $BUILD_DTBO = 1 ]
 	then
@@ -187,9 +187,9 @@ setversioning() {
 ##--------------------------------------------------------------##
 
 exports() {
-	export KBUILD_BUILD_USER="Nobody"
-    export KBUILD_BUILD_HOST="Unknown"
-    export KBUILD_BUILD_VERSION="1"
+	export KBUILD_BUILD_USER="nobody"
+    export KBUILD_BUILD_HOST="android-build"
+    export KBUILD_BUILD_VERSION="2"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
