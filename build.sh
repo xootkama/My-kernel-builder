@@ -143,8 +143,8 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 	elif [ $COMPILER = "gcc" ]
 	then
 		msg "|| Cloning GCC  ||"
-		git clone https://github.com/najahiiii/aarch64-linux-gnu.git -b linaro8-20190402 --depth=1 gcc64
-		git clone https://github.com/innfinite4evr/android-prebuilts-gcc-linux-x86-arm-arm-eabi-7.2.git -b master --depth=1 gcc32
+		git clone --depth=1 https://github.com/najahiiii/aarch64-linux-gnu -b gcc8-201903-A $KERNEL_DIR/gcc64
+		git clone --depth=1 https://github.com/Thoreck-project/arm-linux-gnueabi-gcc9 -b master $KERNEL_DIR/gcc32
 
 	elif [ $COMPILER = "clangxgcc" ]
 	then
@@ -189,7 +189,7 @@ setversioning() {
 exports() {
 	export KBUILD_BUILD_USER="injustice"
     export KBUILD_BUILD_HOST="android-build"
-    export KBUILD_BUILD_VERSION="53"
+    export KBUILD_BUILD_VERSION="59"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
