@@ -143,9 +143,9 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 	elif [ $COMPILER = "gcc" ]
 	then
 		msg "|| Cloning GCC  ||"
-		git clone --depth=1 https://github.com/arter97/arm64-gcc -b master $KERNEL_DIR/gcc64
-		git clone --depth=1 https://github.com/arter97/arm32-gcc -b master $KERNEL_DIR/gcc32
-
+		git clone --depth=1 https://github.com/Kyvangka1610/gcc-arm-10.2-2020.11-x86_64-aarch64-none-linux-gnu -b master $KERNEL_DIR/gcc64
+		git clone --depth=1 https://github.com/Kyvangka1610/gcc-arm-10.2-2020.11-x86_64-arm-none-linux-gnueabihf -b master $KERNEL_DIR/gcc32
+		
 	elif [ $COMPILER = "clangxgcc" ]
 	then
 		msg "|| Cloning toolchain ||"
@@ -189,7 +189,7 @@ setversioning() {
 exports() {
 	export KBUILD_BUILD_USER="injustice"
     export KBUILD_BUILD_HOST="android-build"
-    export KBUILD_BUILD_VERSION="11"
+    export KBUILD_BUILD_VERSION="16"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
