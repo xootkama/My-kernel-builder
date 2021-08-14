@@ -57,14 +57,14 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
 NAMA=Wizard
-JENIS=HMP
 VARIAN=Electro
+JENIS=HMP
 # Build Type
 BUILD_TYPE="Nightly"
 
 # Specify compiler.
 # 'clang' or 'clangxgcc' or 'gcc'
-COMPILER=gcc
+COMPILER=clang
 
 # Kernel is LTO
 LTO=0
@@ -138,7 +138,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 	if [ $COMPILER = "clang" ]
 	then
 		msg "|| Cloning toolchain ||"
-		git clone --depth=1 https://github.com/fajar4561/SignatureTC_Clang -b master clang
+		git clone --depth=1 https://github.com/kdrag0n/proton-clang -b master clang
 
 	elif [ $COMPILER = "gcc" ]
 	then
@@ -189,7 +189,7 @@ setversioning() {
 exports() {
 	export KBUILD_BUILD_USER="injustice"
     export KBUILD_BUILD_HOST="android-build"
-    export KBUILD_BUILD_VERSION="16"
+    export KBUILD_BUILD_VERSION="4"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
