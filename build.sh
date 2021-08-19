@@ -143,8 +143,8 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 	elif [ $COMPILER = "gcc" ]
 	then
 		msg "|| Cloning GCC  ||"
-		git clone --depth=1 https://github.com/mvaisakh/gcc-arm64.git gcc64 $KERNEL_DIR/gcc64
-		git clone --depth=1 https://github.com/mvaisakh/gcc-arm.git gcc32 $KERNEL_DIR/gcc32
+		git clone --depth=1 https://github.com/mvaisakh/gcc-arm64.git -b gcc-master $KERNEL_DIR/gcc64
+		git clone --depth=1 https://github.com/mvaisakh/gcc-arm.git -b gcc-master $KERNEL_DIR/gcc32
 		
 	elif [ $COMPILER = "clangxgcc" ]
 	then
