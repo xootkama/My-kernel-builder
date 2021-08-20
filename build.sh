@@ -189,7 +189,7 @@ setversioning() {
 exports() {
 	export KBUILD_BUILD_USER="injustice"
     export KBUILD_BUILD_HOST="android-build"
-    export KBUILD_BUILD_VERSION="39"
+    export KBUILD_BUILD_VERSION="8"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
