@@ -50,7 +50,7 @@ DEVICE="X00T"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=X00TD_defconfig
+DEFCONFIG=X00T_defconfig
 
 # Show manufacturer info
 MANUFACTURERINFO="ASUSTek Computer Inc."
@@ -64,7 +64,7 @@ BUILD_TYPE="Nightly"
 
 # Specify compiler.
 # 'clang' or 'clangxgcc' or 'gcc'
-COMPILER=clang
+COMPILER=gcc
 
 # Kernel is LTO
 LTO=0
