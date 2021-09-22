@@ -328,8 +328,8 @@ build_kernel() {
 	elif [ $COMPILER = "gcc" ]
 	then
 		make -j"$PROCS" O=out \
-				CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
-				CROSS_COMPILE=aarch64-linux-gnu- "${MAKE[@]}" 2>&1 | tee build.log
+				CROSS_COMPILE_ARM32=arm-none-linux-gnueabihf- \
+				CROSS_COMPILE=aarch64-none-linux-gnu- "${MAKE[@]}" 2>&1 | tee build.log
 	elif [ $COMPILER = "clangxgcc" ]
 	then
 		make -j"$PROCS"  O=out \
