@@ -64,7 +64,7 @@ BUILD_TYPE="Nightly"
 
 # Specify compiler.
 # 'clang' or 'clangxgcc' or 'gcc'
-COMPILER=clang
+COMPILER=gcc
 
 # Kernel is LTO
 LTO=0
@@ -188,8 +188,8 @@ setversioning() {
 
 exports() {
 	export KBUILD_BUILD_USER="queen"
-    export KBUILD_BUILD_HOST="9a0eac8"
-    export KBUILD_BUILD_VERSION="2"
+    export KBUILD_BUILD_HOST="9a0eac8p31"
+    export KBUILD_BUILD_VERSION="3"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
