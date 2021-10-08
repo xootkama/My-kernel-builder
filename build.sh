@@ -58,13 +58,13 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 # Kernel Variant
 NAMA=Wizard
 VARIAN=Electro
-JENIS=CAF
+JENIS=HMP
 # Build Type
 BUILD_TYPE="Nightly"
 
 # Specify compiler.
 # 'clang' or 'clangxgcc' or 'gcc'
-COMPILER=clang
+COMPILER=gcc
 
 # Kernel is LTO
 LTO=0
