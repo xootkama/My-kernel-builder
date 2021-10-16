@@ -1,9 +1,9 @@
 kind: pipeline
-name: RyuuPipeline
+name: Signature Drone
 
 steps:
- - name: RyuujiX-Build
-   image: archlinux:base-devel
+ - name: compile
+   image: fajar4561/saciku:latest
    environment:
      TG_CHAT_ID:
        from_secret: TG_CHAT_ID
