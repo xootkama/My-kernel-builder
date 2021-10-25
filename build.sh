@@ -196,7 +196,7 @@ setversioning() {
 exports() {
 	export KBUILD_BUILD_USER="queen"
     export KBUILD_BUILD_HOST="android-build"
-    export KBUILD_BUILD_VERSION="51"
+    export KBUILD_BUILD_VERSION="56"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
