@@ -140,7 +140,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 	if [ $COMPILER = "clang" ]
 	then
 		msg "|| Cloning toolchain ||"
-		git clone --depth=1 https://gitlab.com/ElectroPerf/atom-x-clang -b atom-14 clang
+		git clone --depth=1 https://github.com/Kneba/venom-clang -b master clang
 
 	elif [ $COMPILER = "gcc49" ]
 	then
