@@ -55,9 +55,9 @@ DEFCONFIG=X00TD_defconfig
 MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
-NAMA=Wizard
-JENIS=Electro
-VARIAN=CAF
+NAMA=AOSPA
+JENIS=HMP
+VARIAN=OEM
 
 # Build Type
 BUILD_TYPE="Nightly"
@@ -196,7 +196,7 @@ setversioning() {
 exports() {
 	export KBUILD_BUILD_USER="queen"
     export KBUILD_BUILD_HOST="android-build"
-    export KBUILD_BUILD_VERSION="2"
+    export KBUILD_BUILD_VERSION="3"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
