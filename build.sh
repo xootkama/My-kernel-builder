@@ -55,16 +55,16 @@ DEFCONFIG=X00TD_defconfig
 MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
-NAMA=AOSPA
+NAMA=Wizard
 JENIS=HMP
-VARIAN=OEM
+VARIAN=CAF
 
 # Build Type
 BUILD_TYPE="Nightly"
 
 # Specify compiler.
 # 'clang' or 'clangxgcc' or 'gcc' or 'gcc49'
-COMPILER=gcc49
+COMPILER=gcc
 
 # Message on anykernel when installation
 MESSAGE="don't blame me if u get poor battery backup or weak performance . i'm not responsible . Do with Your Own Risk."
@@ -196,7 +196,7 @@ setversioning() {
 exports() {
 	export KBUILD_BUILD_USER="queen"
     export KBUILD_BUILD_HOST="android-build"
-    export KBUILD_BUILD_VERSION="3"
+    export KBUILD_BUILD_VERSION="1"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
