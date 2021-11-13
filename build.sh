@@ -49,7 +49,7 @@ DEVICE="X00TD"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=X00TD_defconfig
+DEFCONFIG=wizard_defconfig
 
 # Show manufacturer info
 MANUFACTURERINFO="ASUSTek Computer Inc."
@@ -57,7 +57,7 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 # Kernel Variant
 NAMA=Electro
 JENIS=Wizard
-VARIAN=EAS
+VARIAN=HMP
 
 # Build Type
 BUILD_TYPE="Nightly"
@@ -196,7 +196,7 @@ setversioning() {
 exports() {
 	export KBUILD_BUILD_USER="queen"
     export KBUILD_BUILD_HOST="18ded16aaef9"
-    export KBUILD_BUILD_VERSION="2"
+    export KBUILD_BUILD_VERSION="3"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
