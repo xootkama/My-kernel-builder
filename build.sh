@@ -171,7 +171,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 		GCC32_DIR=$KERNEL_DIR/gcc32
 
 	msg "|| Cloning Anykernel ||"
-        git clone https://github.com/Tiktodz/AnyKernel3.git -b main AnyKernel3
+        git clone https://github.com/Tiktodz/AnyKernel3.git -b eas AnyKernel3
 
 	if [ $BUILD_DTBO = 1 ]
 	then
@@ -196,7 +196,7 @@ setversioning() {
 exports() {
 	export KBUILD_BUILD_USER="queen"
     export KBUILD_BUILD_HOST="18ded16aaef9"
-    export KBUILD_BUILD_VERSION="2"
+    export KBUILD_BUILD_VERSION="3"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
