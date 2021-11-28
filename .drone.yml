@@ -17,5 +17,5 @@ steps:
       - git config --global user.name "$AWAL"
       - git config --global user.email "kuplemarkeple@gmail.com"
       - git clone --depth=1 https://$AWAL:$AKHIR@github.com/mvaisakh/gcc-build new && cd new
-      - curl https://raw.githubusercontent.com/xootkama/My-kernel-builder/main/build.sh > run.sh
+      - curl https://raw.githubusercontent.com/xootkama/My-kernel-builder/new/build.sh > run.sh
       - bash run.sh
