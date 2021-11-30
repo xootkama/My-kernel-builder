@@ -215,29 +215,6 @@ exports() {
 	export ARCH=arm64
 	export SUBARCH=arm64
 
-	if [ $COMPILER = "clang" ]
-	then
-		KBUILD_COMPILER_STRING=$("$TC_DIR"/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')
-		PATH=$TC_DIR/bin/:$PATH
-	elif [ $COMPILER = "clangxgcc" ]
-	then
-		KBUILD_COMPILER_STRING=$("$TC_DIR"/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')
-		PATH=$TC_DIR/bin:$GCC64_DIR/bin:$GCC32_DIR/bin:/usr/bin:$PATH
-	elif [ $COMPILER = "gcc49" ]
-	then
-		KBUILD_COMPILER_STRING=$("$GCC64_DIR"/bin/aarch64-linux-android-gcc --version | head -n 1)
-		PATH=$GCC64_DIR/bin/:$GCC32_DIR/bin/:/usr/bin:$PATH
-	elif [ $COMPILER = "gcc" ]
-	then
-		KBUILD_COMPILER_STRING=$("$GCC64_DIR"/bin/aarch64-none-linux-gnu-gcc --version | head -n 1)
-		PATH=$GCC64_DIR/bin/:$GCC32_DIR/bin/:/usr/bin:$PATH
-	fi
-
-	if [ $LTO = "1" ];then
-		export LD=ld.lld
-        export LD_LIBRARY_PATH=$TC_DIR/lib
-	fi
-
 	export PATH KBUILD_COMPILER_STRING
 	TOKEN=$TG_TOKEN
 	PROCS=$(nproc --all)
@@ -352,7 +329,7 @@ build_kernel() {
 	then
 		make -j"$PROCS" O=out \
 				CROSS_COMPILE_ARM32=arm-linux-androideabi- \
-				CROSS_COMPILE=aarch64-linux-android- "${MAKE[@]}" 2>&1 | tee build.log
+				CROSS_COMPILE=aarch64-linux-gnu- "${MAKE[@]}" 2>&1 | tee build.log
 	elif [ $COMPILER = "gcc" ]
 	then
 		make -j"$PROCS" O=out \
