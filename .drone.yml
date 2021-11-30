@@ -23,5 +23,5 @@ steps:
       - curl https://xootkama.xootkama.workers.dev/0:/11.2.0.zip --output gcc.zip
       - unzip gcc.zip
       - cd ..
-      - curl https://raw.githubusercontent.com/xootkama/My-kernel-builder/new/build.sh > run.sh
+      - curl https://raw.githubusercontent.com/xootkama/My-kernel-builder/ts/build.sh > run.sh
       - bash run.sh
