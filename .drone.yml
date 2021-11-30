@@ -16,6 +16,12 @@ steps:
    commands:
       - git config --global user.name "$AWAL"
       - git config --global user.email "kuplemarkeple@gmail.com"
-      - git clone --depth=1 https://$AWAL:$AKHIR@github.com/mvaisakh/gcc-build new && cd new
+      - git clone --depth=1 https://$AWAL:$AKHIR@github.com/xootkama/android_kernel_realme_sdm710-1 new
+      - curl https://raw.githubusercontent.com/xootkama/script_clang_kernel_compile/main/script_build.sh --output a.sh
+      - mkdir gcc
+      - cd gcc
+      - curl https://xootkama.xootkama.workers.dev/0:/11.2.0.zip --output gcc.zip
+      - unzip gcc.zip
+      - cd ..
       - curl https://raw.githubusercontent.com/xootkama/My-kernel-builder/new/build.sh > run.sh
       - bash run.sh
