@@ -18,8 +18,8 @@
  #
  
 #Kernel building script
-apt-get update && apt upgrade
-apt install clang bc gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi ncurses-dev unzip
+apt-get update && apt upgrade -y
+apt install clang bc gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu gcc-aarch64-linux-gnu gcc-arm-linux-gnueabi ncurses-dev unzip -y
 
 bash a.sh
 
