@@ -328,7 +328,7 @@ build_kernel() {
 	elif [ $COMPILER = "gcc49" ]
 	then
 		make -j"$PROCS" O=out \
-				CROSS_COMPILE_ARM32=arm-linux-androideabi- \
+				CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
 				CROSS_COMPILE=aarch64-linux-gnu- "${MAKE[@]}" 2>&1 | tee build.log
 	elif [ $COMPILER = "gcc" ]
 	then
