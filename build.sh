@@ -310,7 +310,7 @@ build_kernel() {
 	then
 		make -j"$PROCS" O=out \
 				CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
-				CROSS_COMPILE=aarch64-linux-gnu- "${MAKE[@]}" 2>&1 | tee build.log
+				CROSS_COMPILE=aarch64-linux-gnu- 
 	fi
 
 		BUILD_END=$(date +"%s")
@@ -330,7 +330,7 @@ build_kernel() {
 			else
 			if [ "$PTTG" = 1 ]
  			then
-				tg_post_build "build.log" "<b>Build failed to compile after $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds</b>"
+				tg_post_build"<b>Build failed to compile after $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds</b>"
 			fi
 		fi
 
@@ -393,7 +393,7 @@ exports
 build_kernel
 if [ $LOG_DEBUG = "1" ]
 then
-	tg_post_build "build.log" "$CHATID" "<b>Build failed to compile after $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds</b>"
+	tg_post_build"$CHATID" "<b>Build failed to compile after $((DIFF / 60)) minute(s) and $((DIFF % 60)) seconds</b>"
 fi
 
 ##----------------*****-----------------------------##
