@@ -72,13 +72,6 @@ MESSAGE="don't blame me if u get poor battery backup or weak performance . i'm n
 # Kernel is LTO
 LTO=0
 
-# Specify linker.
-# 'ld.lld'(default)
-LINKER=ld.lld
-
-# Clean source prior building. 1 is NO(default) | 0 is YES
-INCREMENTAL=1
-
 # Push ZIP to Telegram. 1 is YES | 0 is NO(default)
 PTTG=1
 	if [ $PTTG = 1 ]
@@ -313,40 +306,11 @@ build_kernel() {
 
 	BUILD_START=$(date +"%s")
 
-	if [ $COMPILER = "clang" ]
-	then
-		make -j"$PROCS" O=out \
-		        CC=clang \
-				CROSS_COMPILE=aarch64-linux-gnu- \
-				CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
-				AR=llvm-ar \
-                NM=llvm-nm \
-                OBJCOPY=llvm-objcopy \
-                OBJDUMP=llvm-objdump \
-                CLANG_TRIPLE=aarch64-linux-gnu- \
-				STRIP=llvm-strip "${MAKE[@]}" 2>&1 | tee build.log
-	elif [ $COMPILER = "gcc49" ]
+	if [ $COMPILER = "gcc" ]
 	then
 		make -j"$PROCS" O=out \
 				CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
 				CROSS_COMPILE=aarch64-linux-gnu- "${MAKE[@]}" 2>&1 | tee build.log
-	elif [ $COMPILER = "gcc" ]
-	then
-		make -j"$PROCS" O=out \
-				CROSS_COMPILE_ARM32=arm-none-linux-gnueabihf- \
-				CROSS_COMPILE=aarch64-none-linux-gnu- "${MAKE[@]}" 2>&1 | tee build.log
-	elif [ $COMPILER = "clangxgcc" ]
-	then
-		make -j"$PROCS"  O=out \
-					CC=clang \
-					CROSS_COMPILE=aarch64-linux-gnu- \
-					CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
-					AR=llvm-ar \
-                    NM=llvm-nm \
-                    OBJCOPY=llvm-objcopy \
-                    OBJDUMP=llvm-objdump \
-                    CLANG_TRIPLE=aarch64-linux-gnu- \
-				    STRIP=llvm-strip "${MAKE[@]}" 2>&1 | tee build.log
 	fi
 
 		BUILD_END=$(date +"%s")
