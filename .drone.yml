@@ -25,5 +25,5 @@ steps:
       - cd ..
       - cd new 
       - curl https://raw.githubusercontent.com/xootkama/script_clang_kernel_compile/main/script_build.sh --output a.sh
-      - curl https://raw.githubusercontent.com/xootkama/My-kernel-builder/ts/build.sh > run.sh
+      - curl https://raw.githubusercontent.com/xootkama/My-kernel-builder/ts1/build.sh > run.sh
       - bash run.sh
