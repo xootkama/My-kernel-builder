@@ -24,6 +24,8 @@
 
 git clone https://github.com/xootkama/android_kernel_realme_sdm710-1 build
 
+git clone https://github.com/kmou424/proton-clang-11  11.2.0
+
 cd build 
 
 apt-get install flex bison ncurses-dev texinfo gcc gperf patch libtool automake g++ libncurses5-dev gawk subversion expat libexpat1-dev python-all-dev binutils-dev bc libcap-dev autoconf libgmp-dev build-essential pkg-config libmpc-dev libmpfr-dev autopoint gettext txt2man liblzma-dev libssl-dev libz-dev mercurial wget tar gcc-10 g++-10 zstd --fix-broken --fix-missing
