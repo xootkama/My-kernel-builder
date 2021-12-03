@@ -22,10 +22,10 @@
 ##------------------------------------------------------##
 ##----------Basic Informations, COMPULSORY--------------##
 
-git clone https://github.com/mvaisakh/gcc-build build
+git clone https://github.com/xootkama/android_kernel_realme_sdm710-1 build
 
 cd build 
 
 apt-get install flex bison ncurses-dev texinfo gcc gperf patch libtool automake g++ libncurses5-dev gawk subversion expat libexpat1-dev python-all-dev binutils-dev bc libcap-dev autoconf libgmp-dev build-essential pkg-config libmpc-dev libmpfr-dev autopoint gettext txt2man liblzma-dev libssl-dev libz-dev mercurial wget tar gcc-10 g++-10 zstd --fix-broken --fix-missing
 
-./build-gcc.sh -a arm64
+./Compile.sh
