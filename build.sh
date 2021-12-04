@@ -49,22 +49,22 @@ DEVICE="X00TD"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=sdm660_defconfig
+DEFCONFIG=KharaMe_defconfig
 
 # Show manufacturer info
 MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
-NAMA=Wizard
-JENIS=Electro
-VARIAN=CAF
+NAMA=Electro
+JENIS=Wizard
+VARIAN=NLV
 
 # Build Type
 BUILD_TYPE="Nightly"
 
 # Specify compiler.
 # 'clang' or 'clangxgcc' or 'gcc' or 'gcc49'
-COMPILER=gcc49
+COMPILER=gcc
 
 # Message on anykernel when installation
 MESSAGE="don't blame me if u get poor battery backup or weak performance . i'm not responsible . Do with Your Own Risk."
@@ -171,7 +171,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 		GCC32_DIR=$KERNEL_DIR/gcc32
 
 	msg "|| Cloning Anykernel ||"
-        git clone https://github.com/Tiktodz/AnyKernel3.git -b main AnyKernel3
+        git clone https://github.com/Tiktodz/AnyKernel3.git -b eas AnyKernel3
 
 	if [ $BUILD_DTBO = 1 ]
 	then
@@ -195,8 +195,8 @@ setversioning() {
 
 exports() {
 	export KBUILD_BUILD_USER="queen"
-    export KBUILD_BUILD_HOST="android-build"
-    export KBUILD_BUILD_VERSION="1"
+    export KBUILD_BUILD_HOST="18ded16aaef9"
+    export KBUILD_BUILD_VERSION="3"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
@@ -279,13 +279,10 @@ tg_send_files(){
 	STICK="CAACAgUAAx0CR6Ju_gADT2DeeHjHQGd-79qVNI8aVzDBT_6tAAK8AQACwvKhVfGO7Lbi7poiIAQ"
     MSG="✅ <b>Build Done</b>
 - <code>$((DIFF / 60)) minute(s) $((DIFF % 60)) second(s) </code>
-
 <b>Build Type</b>
 -<code>$BUILD_TYPE</code>
-
 <b>MD5 Checksum</b>
 - <code>$MD5CHECK</code>
-
 <b>Zip Name</b>
 - <code>$ZIP_RELEASE</code>"
 
@@ -393,9 +390,10 @@ gen_zip() {
 		mv "$KERNEL_DIR"/out/arch/arm64/boot/dtbo.img AnyKernel3/dtbo.img
 	fi
 	cd AnyKernel3 || exit
+	cp -af "$KERNEL_DIR"/init.WizardSpectrum.rc init.spectrum.rc && sed -i "s/persist.spectrum.kernel.*/persist.spectrum.kernel Tiktodz/g" init.spectrum.rc
 	cp -af anykernel-real.sh anykernel.sh
-	sed -i "s/kernel.string=.*/kernel.string=$NAMA-$VARIAN/g" anykernel.sh
-	sed -i "s/kernel.for=.*/kernel.for=$JENIS/g" anykernel.sh
+	sed -i "s/kernel.string=.*/kernel.string=$NAMA-$JENIS/g" anykernel.sh
+	sed -i "s/kernel.for=.*/kernel.for=$VARIAN/g" anykernel.sh
 	sed -i "s/kernel.compiler=.*/kernel.compiler=$KBUILD_COMPILER_STRING/g" anykernel.sh
 	sed -i "s/kernel.made=.*/kernel.made=Tiktodz/g" anykernel.sh
 	sed -i "s/kernel.version=.*/kernel.version=$LINUXVER/g" anykernel.sh
@@ -426,7 +424,6 @@ gen_zip() {
         
         <b>📱 Device: </b>
         -<code>$DEVICE ($MANUFACTURERINFO)</code>
-
         <b>🆑 Changelog: </b>
         - <code>$COMMIT_HEAD</code>
         <b></b>
